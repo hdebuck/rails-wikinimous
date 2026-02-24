@@ -1,0 +1,18 @@
+<h1>Wikinimous</h1>
+<div></div>
+<ul>
+  <% @articles.each do |article| %>
+    <li><%=link_to article.title, article_path(article.id) %></li>
+  <% end %>
+</ul>
+</div>
+<div>
+<h2>Your new article</h2>
+<%= form_with model: @article do |f| %>
+ <p> <%= f.label :title %></p>
+  <%= f.text_field :title %>
+ <p> <%= f.label :content %></p>
+  <%= f.text_field :content %>
+ <p> <%= f.submit %></p>
+<% end %>
+</div>
